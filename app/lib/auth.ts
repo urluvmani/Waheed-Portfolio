@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 import { cookies } from "next/headers";
 
-const JWT_SECRET = process.env.JWT_SECRET!;
+const JWT_SECRET = process.env.JWT_SECRET as string;
 const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN || "7d";
 
 type JwtPayload = { email: string; role: "admin" };
@@ -29,12 +29,18 @@ export async function verifyAdminCredentials(email: string, password: string) {
 }
 
 export function signToken(payload: JwtPayload) {
-  return jwt.sign(payload, JWT_SECRET, { expiresIn: JWT_EXPIRES_IN });
+  return jwt.sign(
+    payload,
+    JWT_SECRET,
+    { expiresIn: JWT_EXPIRES_IN }
+  );
 }
+
 
 export function verifyToken(token: string) {
   return jwt.verify(token, JWT_SECRET) as JwtPayload;
 }
+
 
 export async function getAuthFromCookies() {
   const store = await cookies(); // ✅ Next 15 type-safe
