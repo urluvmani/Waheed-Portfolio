@@ -76,7 +76,7 @@ export function verifyToken(token: string) {
  * Read auth from cookies (Next.js App Router safe)
  */
 export async function getAuthFromCookies() {
-  const store = cookies(); // ✅ Next.js 15+ (no await needed)
+ const store = await cookies(); // ✅ MUST await in Next.js 16
   const token = store.get("admin_token")?.value;
 
   if (!token) return null;
