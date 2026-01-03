@@ -1,4 +1,5 @@
 // app/page.tsx
+export const dynamic = "force-dynamic";
 
 import About from "./components/sections/About";
 import Education from "./components/sections/Education";
