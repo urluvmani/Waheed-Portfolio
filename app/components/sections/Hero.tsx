@@ -94,7 +94,7 @@ export default function Hero({
           <div className="relative mx-auto w-full max-w-[220px] sm:max-w-sm md:max-w-md">
             <div className="relative rounded-2xl bg-emerald-700/10 p-1.5 shadow-lg sm:rounded-3xl sm:p-2">
               <Image
-                src={profileImageSrc}
+                src="/images/profile2.jpg"
                 alt={profileImageAlt}
                 width={420}
                 height={520}
