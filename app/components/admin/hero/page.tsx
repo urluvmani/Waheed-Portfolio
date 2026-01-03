@@ -97,33 +97,7 @@ const save = async () => {
           }
         />
       </div>
-      <div>
-  <label className="block text-sm font-medium">Profile Image</label>
-
-  <input
-    type="file"
-    accept="image/*"
-    className="mt-1 block w-full"
-    onChange={(e) => {
-      const file = e.target.files?.[0];
-      if (!file) return;
-
-      const reader = new FileReader();
-      reader.onload = () => {
-        setForm({ ...form, profileImageSrc: reader.result as string });
-      };
-      reader.readAsDataURL(file);
-    }}
-  />
-
-  {form.profileImageSrc && (
-    <img
-      src={form.profileImageSrc}
-      alt="Preview"
-      className="mt-3 h-40 rounded object-cover"
-    />
-  )}
-</div>
+ 
 
 
       <button
