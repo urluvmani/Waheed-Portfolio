@@ -6,6 +6,9 @@ if (!MONGODB_URI) {
   throw new Error("MONGODB_URI is not defined");
 }
 
+// 👇 TypeScript ko clearly bata do ke ab ye string hi hai
+const MONGO_URI: string = MONGODB_URI;
+
 // Global cache (Vercel + hot reload safe)
 let cached = (global as any).mongoose;
 
@@ -23,10 +26,10 @@ export async function dbConnect() {
 
   if (!cached.promise) {
     cached.promise = mongoose
-      .connect(MONGODB_URI, {
+      .connect(MONGO_URI, {
         bufferCommands: false,
       })
-      .then((mongoose) => mongoose);
+      .then((m) => m);
   }
 
   cached.conn = await cached.promise;
