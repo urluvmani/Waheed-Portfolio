@@ -12,7 +12,6 @@ type HeroProps = {
   bullets?: string[];
   ctaText?: string;
   ctaHref?: string;
-  profileImageSrc?: string;
   profileImageAlt?: string;
 };
 
@@ -29,82 +28,70 @@ export default function Hero({
   ],
   ctaText = "View Case Studies",
   ctaHref = "#projects",
-  profileImageSrc = "/images/profile.jpg",
-  profileImageAlt = "Waheed Arshad – Excel Expert",
+  profileImageAlt = "Excel Automation Expert Illustration",
 }: HeroProps) {
   return (
     <section
       id={id}
+      className="relative min-h-[100vh] overflow-hidden flex items-center"
       aria-label="Excel Expert Hero Section"
-      className="relative overflow-hidden bg-gradient-to-br from-black via-neutral-900 to-neutral-800"
     >
-      {/* subtle grid / noise feel */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_60%)]" />
+      {/* 🔹 Background Image */}
+      <Image
+        src="/images/profile3.png"
+        alt={profileImageAlt}
+        fill
+        priority
+        className="object-cover object-[80%_center] md:object-right opacity-30 md:opacity-100"
+      />
 
-      <div className="relative mx-auto max-w-7xl px-5 py-14 sm:py-20 lg:py-28">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
+      {/* 🔹 Dark Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/70 md:via-black/30 md:to-black/10 to-black/80" />
 
-          {/* LEFT CONTENT */}
-          <div className="text-center lg:text-left">
-            <p className="text-sm block md:hidden pt-10 md:pt-0 font-semibold tracking-widest text-gray-400 uppercase">
-              {name}
-            </p>
+      {/* 🔹 Content */}
+      <div className="relative md:flex md:flex-col items-start z-10  max-w-4xl px-5 text-center md:text-start">
+        <p className="mb-3  md:mt-10 text-sm font-semibold tracking-widest text-white uppercase">
+          {name}
+        </p>
 
-            <h1 className="mt-4 md:mt-0 text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl">
-              {headlineH1}
-            </h1>
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-white">
+          {headlineH1}
+        </h1>
 
-            <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-gray-300 sm:text-lg lg:mx-0">
-              {subheadlineH2}
-            </p>
+        <p className="mt-6 text-base sm:text-lg text-white text-shadow-2xl font-semibold">
+          {subheadlineH2}
+        </p>
 
-            {/* BULLETS */}
-            <ul className="mx-auto mt-7 max-w-md space-y-4 text-left lg:mx-0">
-              {bullets.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-gray-200">
-                  <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white text-xs font-bold text-black">
-                    ✓
-                  </span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+        {/* BULLETS */}
+        <ul className="mx-auto md:mx-0 mt-8 max-w-md space-y-4 text-left">
+          {bullets.map((item) => (
+            <li key={item} className="flex items-start gap-3 text-gray-200">
+              <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-400 text-xs font-bold text-black">
+                ✓
+              </span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
 
-            {/* CTA BUTTONS */}
-            <div className="mt-10 md:mt-5 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
-              <Link
-                href={ctaHref}
-                className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-semibold text-black shadow-lg transition hover:bg-gray-200"
-              >
-                <FileSpreadsheet size={18} />
-                {ctaText}
-              </Link>
+        {/* CTA BUTTONS */}
+        <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+          <Link
+            href={ctaHref}
+            className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-3 text-sm font-semibold text-black shadow-xl transition hover:bg-gray-200"
+          >
+            <FileSpreadsheet size={18} />
+            {ctaText}
+          </Link>
 
-              <Link
-                href="https://wa.me/923336630418"
-                target="_blank"
-                className="inline-flex items-center gap-2 rounded-full border border-gray-500 px-7 py-3 text-sm font-semibold text-gray-200 transition hover:bg-white/10"
-              >
-                <MessageCircle size={18} />
-                Contact on WhatsApp
-              </Link>
-            </div>
-          </div>
-
-          {/* RIGHT IMAGE */}
-          <div className="relative mx-auto w-full max-w-[230px] sm:max-w-sm md:max-w-md">
-            <div className="relative rounded-3xl  shadow-2xl">
-              <Image
-                src="/images/profile2.jpg"
-                alt={profileImageAlt}
-                width={420}
-                height={520}
-                priority
-                className="rounded-2xl object-cover"
-              />
-            </div>
-          </div>
-
+          <Link
+            href="https://wa.me/923336630418"
+            target="_blank"
+            className="inline-flex items-center gap-2 rounded-full border border-white/90 bg-white/10 px-8 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20"
+          >
+            <MessageCircle size={18} />
+            Contact on WhatsApp
+          </Link>
         </div>
       </div>
     </section>
