@@ -12,6 +12,7 @@ type HeroProps = {
   bullets?: string[];
   ctaText?: string;
   ctaHref?: string;
+   profileImageSrc?: string   // ✅ ADD THIS
   profileImageAlt?: string;
 };
 
