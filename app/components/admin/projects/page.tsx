@@ -1,8 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function ProjectsAdmin() {
+  const router = useRouter();
+
   const [form, setForm] = useState({
     slug: "",
     title: "",
@@ -27,20 +30,34 @@ export default function ProjectsAdmin() {
 
   return (
     <div className="space-y-3">
+      
+      {/* 🔙 Back Button */}
+      <button
+        onClick={() => router.push("/admin")}
+        className="text-sm font-medium text-gray-700 hover:underline"
+      >
+        ← Back to Dashboard
+      </button>
+
       <h2 className="text-xl font-semibold">Projects</h2>
 
-      {Object.keys(form).map(k => (
+      {Object.keys(form).map((k) => (
         <textarea
           key={k}
           className="w-full rounded border p-2"
           rows={k === "overview" ? 3 : 2}
           placeholder={k}
           value={(form as any)[k]}
-          onChange={e => setForm({ ...form, [k]: e.target.value })}
+          onChange={(e) =>
+            setForm({ ...form, [k]: e.target.value })
+          }
         />
       ))}
 
-      <button onClick={save} className="bg-gray-900 px-4 py-2 text-white rounded">
+      <button
+        onClick={save}
+        className="rounded bg-gray-900 px-4 py-2 text-white"
+      >
         Save Project
       </button>
     </div>

@@ -37,9 +37,8 @@ export default function LoginClient() {
       setLoading(false);
     }
   };
-
   return (
-    <div style={{ maxWidth: 420, margin: "60px auto", fontFamily: "system-ui" }}>
+    <div className="p-10" style={{ maxWidth: 420, margin: "60px auto", fontFamily: "system-ui" }}>
       <h1 style={{ fontSize: 24, marginBottom: 12 }}>Admin Login</h1>
 
       <form onSubmit={onSubmit} style={{ display: "grid", gap: 10 }}>

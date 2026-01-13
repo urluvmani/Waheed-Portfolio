@@ -1,8 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function HeroAdmin() {
+  const router = useRouter();
+
   const [form, setForm] = useState({
     name: "",
     headlineH1: "",
@@ -31,39 +34,46 @@ export default function HeroAdmin() {
       );
   }, []);
 
-const save = async () => {
-  setStatus("Saving...");
+  const save = async () => {
+    setStatus("Saving...");
 
-  let imagePath = form.profileImageSrc;
+    let imagePath = form.profileImageSrc;
 
-  // agar base64 image hai to upload karo
-  if (form.profileImageSrc.startsWith("data:image")) {
-    const res = await fetch("/api/upload", {
+    if (form.profileImageSrc.startsWith("data:image")) {
+      const res = await fetch("/api/upload", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ image: form.profileImageSrc }),
+      });
+
+      const data = await res.json();
+      imagePath = data.path;
+    }
+
+    await fetch("/api/hero", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ image: form.profileImageSrc }),
+      body: JSON.stringify({
+        ...form,
+        profileImageSrc: imagePath,
+        bullets: form.bullets.split("\n").filter(Boolean),
+      }),
     });
 
-    const data = await res.json();
-    imagePath = data.path;
-  }
-
-  await fetch("/api/hero", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      ...form,
-      profileImageSrc: imagePath,
-      bullets: form.bullets.split("\n").filter(Boolean),
-    }),
-  });
-
-  setStatus("Saved");
-};
-
+    setStatus("Saved");
+  };
 
   return (
     <div className="space-y-4">
+      
+      {/* 🔙 Back Button */}
+      <button
+        onClick={() => router.push("/admin")}
+        className="text-sm font-medium text-gray-700 hover:underline"
+      >
+        ← Back to Dashboard
+      </button>
+
       <h2 className="text-xl font-semibold">Hero Section</h2>
 
       {[
@@ -97,8 +107,6 @@ const save = async () => {
           }
         />
       </div>
- 
-
 
       <button
         onClick={save}
