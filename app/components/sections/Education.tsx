@@ -1,6 +1,6 @@
 // components/sections/Education.tsx
 // Server Component friendly
-// Professional, Excel-expert focused education section
+// Trusted Education & Certifications section
 
 type EducationItem = {
   title: string;
@@ -47,24 +47,25 @@ export default function Education({
       className="relative w-full scroll-mt-16 bg-white"
     >
       <div className="mx-auto max-w-7xl px-5 py-16 sm:py-20 lg:py-24">
+
         {/* SECTION HEADING */}
-        <h2 className="text-2xl font-bold text-emerald-900 sm:text-3xl">
+        <h2 className="text-2xl font-extrabold text-gray-900 sm:text-3xl">
           {heading}
         </h2>
 
         {/* EDUCATION CARDS */}
-        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-2">
+        <div className="mt-12 grid gap-8 sm:grid-cols-2">
           {items.map((item) => (
             <div
               key={item.title}
-              className="h-full rounded-3xl border border-emerald-100 bg-emerald-50/40 p-6 shadow-sm transition hover:shadow-md"
+              className="h-full rounded-3xl border border-gray-200 bg-gray-50 p-6 shadow-sm transition hover:shadow-md"
             >
-              <h3 className="text-lg font-semibold text-emerald-900">
+              <h3 className="text-lg font-semibold text-gray-900">
                 {item.title}
               </h3>
 
               {item.institution && (
-                <p className="mt-1 text-sm text-emerald-700">
+                <p className="mt-1 text-sm text-gray-600">
                   {item.institution}
                 </p>
               )}
@@ -75,6 +76,7 @@ export default function Education({
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

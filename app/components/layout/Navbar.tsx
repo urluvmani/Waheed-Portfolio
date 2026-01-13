@@ -20,16 +20,16 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="fixed top-0 z-50 w-full border-b border-emerald-100 bg-white/80 backdrop-blur-md">
+    <header className="fixed top-0 z-50 w-full border-b border-gray-200 bg-white/90 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5">
 
         {/* LOGO */}
         <Link
           href="/"
-          className="flex items-center gap-2 text-lg font-extrabold tracking-tight text-emerald-900"
+          className="flex items-center gap-2 text-lg font-extrabold tracking-tight text-gray-900"
         >
-          <FileSpreadsheet className="h-6 w-6 text-emerald-700" />
-          Waheed<span className="text-emerald-600">.</span>
+          <FileSpreadsheet className="h-6 w-6 text-gray-900" />
+          Waheed<span className="text-gray-500">.</span>
         </Link>
 
         {/* DESKTOP MENU */}
@@ -38,10 +38,10 @@ export default function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              className="group relative text-sm font-medium text-gray-700 transition hover:text-emerald-700"
+              className="group relative text-sm font-medium text-gray-700 transition hover:text-gray-900"
             >
               {link.name}
-              <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-emerald-600 transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-gray-900 transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
 
@@ -49,7 +49,7 @@ export default function Navbar() {
           <Link
             href="https://wa.me/923336630418"
             target="_blank"
-            className="ml-4 inline-flex items-center gap-2 rounded-full bg-emerald-700 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-800"
+            className="ml-4 inline-flex items-center gap-2 rounded-full bg-gray-900 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-gray-800"
           >
             <MessageCircle size={16} />
             Contact
@@ -59,7 +59,7 @@ export default function Navbar() {
         {/* MOBILE BUTTON */}
         <button
           onClick={() => setOpen(!open)}
-          className="rounded-md p-2 text-emerald-800 transition hover:bg-emerald-50 md:hidden"
+          className="rounded-md p-2 text-gray-900 transition hover:bg-gray-100 md:hidden"
           aria-label="Toggle Menu"
         >
           {open ? <X size={22} /> : <Menu size={22} />}
@@ -69,7 +69,7 @@ export default function Navbar() {
       {/* MOBILE MENU */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-300 ${
-          open ? "max-h-[500px] border-t" : "max-h-0"
+          open ? "max-h-[500px] border-t border-gray-200" : "max-h-0"
         }`}
       >
         <nav className="flex flex-col gap-4 bg-white px-6 py-6">
@@ -78,7 +78,7 @@ export default function Navbar() {
               key={link.name}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="text-base font-medium text-gray-800 transition hover:text-emerald-700"
+              className="text-base font-medium text-gray-800 transition hover:text-gray-900"
             >
               {link.name}
             </a>
@@ -89,7 +89,7 @@ export default function Navbar() {
             href="https://wa.me/923336630418"
             target="_blank"
             onClick={() => setOpen(false)}
-            className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-emerald-700 px-5 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-emerald-800"
+            className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-gray-900 px-5 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-gray-800"
           >
             <MessageCircle size={18} />
             Contact on WhatsApp

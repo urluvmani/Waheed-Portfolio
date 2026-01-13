@@ -1,6 +1,6 @@
 // components/sections/Experience.tsx
 // Server Component friendly
-// Premium Experience section for Excel Consultant
+// Trusted Experience section – Light Gray Theme
 
 import {
   FileSpreadsheet,
@@ -61,13 +61,13 @@ export default function Experience({
     <section
       id={id}
       aria-label="Professional Excel Experience"
-      className="relative w-full scroll-mt-16 bg-emerald-50/40"
+      className="relative w-full scroll-mt-16 bg-gray-50"
     >
       <div className="mx-auto max-w-7xl px-5 py-20 lg:py-28">
 
         {/* HEADING */}
         <div className="max-w-2xl">
-          <h2 className="text-2xl font-extrabold text-emerald-900 sm:text-3xl">
+          <h2 className="text-2xl font-extrabold text-gray-900 sm:text-3xl">
             {heading}
           </h2>
           <p className="mt-3 text-gray-700">
@@ -80,41 +80,47 @@ export default function Experience({
           {items.map((item, index) => (
             <div
               key={item.title}
-              className="flex h-full flex-col rounded-3xl border border-emerald-100 bg-white p-7 shadow-sm transition hover:shadow-md"
+              className="flex h-full flex-col rounded-3xl border border-gray-200 bg-white p-7 shadow-sm transition hover:shadow-md"
             >
               {/* ICON */}
-              <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-100">
-                {index === 0 && <FileSpreadsheet className="h-6 w-6 text-emerald-700" />}
-                {index === 1 && <Settings className="h-6 w-6 text-emerald-700" />}
-                {index === 2 && <BarChart3 className="h-6 w-6 text-emerald-700" />}
+              <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-gray-100">
+                {index === 0 && (
+                  <FileSpreadsheet className="h-6 w-6 text-gray-900" />
+                )}
+                {index === 1 && (
+                  <Settings className="h-6 w-6 text-gray-900" />
+                )}
+                {index === 2 && (
+                  <BarChart3 className="h-6 w-6 text-gray-900" />
+                )}
               </div>
 
-              <h3 className="text-lg font-semibold text-emerald-900">
+              <h3 className="text-lg font-semibold text-gray-900">
                 {item.title}
               </h3>
 
               {/* CONTENT */}
               <div className="mt-5 space-y-4 text-sm leading-relaxed text-gray-700">
                 <p>
-                  <span className="font-semibold text-emerald-800">Problem:</span>{" "}
+                  <span className="font-semibold text-gray-900">Problem:</span>{" "}
                   {item.problem}
                 </p>
                 <p>
-                  <span className="font-semibold text-emerald-800">Solution:</span>{" "}
+                  <span className="font-semibold text-gray-900">Solution:</span>{" "}
                   {item.solution}
                 </p>
                 <p>
-                  <span className="font-semibold text-emerald-800">Result:</span>{" "}
+                  <span className="font-semibold text-gray-900">Result:</span>{" "}
                   {item.result}
                 </p>
               </div>
 
               {/* IMPACT TAGS */}
               <div className="mt-6 flex flex-wrap gap-2">
-                <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-800">
+                <span className="inline-flex items-center gap-1 rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-800">
                   <Clock size={12} /> Time Saved
                 </span>
-                <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-800">
+                <span className="inline-flex items-center gap-1 rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-800">
                   <TrendingUp size={12} /> Better Decisions
                 </span>
               </div>
@@ -123,15 +129,16 @@ export default function Experience({
         </div>
 
         {/* STATS */}
-        <div className="mt-20 flex justify-center gap-8 sm:flex">
-          <div className="rounded-2xl bg-white p-6 text-center w-auto md:w-[20vw] shadow-sm">
-            <p className="text-3xl font-extrabold text-emerald-800">60–70%</p>
+        <div className="mt-20 flex justify-center gap-8 flex-wrap">
+          <div className="rounded-2xl bg-white p-6 text-center w-auto md:w-[20vw] border border-gray-200 shadow-sm">
+            <p className="text-3xl font-extrabold text-gray-900">60–70%</p>
             <p className="mt-1 text-sm text-gray-600">
               Reporting Time Reduced
             </p>
           </div>
-          <div className="rounded-2xl bg-white p-6 text-center w-auto md:w-[20vw] shadow-sm">
-            <p className="text-3xl font-extrabold text-emerald-800">99%</p>
+
+          <div className="rounded-2xl bg-white p-6 text-center w-auto md:w-[20vw] border border-gray-200 shadow-sm">
+            <p className="text-3xl font-extrabold text-gray-900">99%</p>
             <p className="mt-1 text-sm text-gray-600">
               Data Accuracy Achieved
             </p>
@@ -142,7 +149,7 @@ export default function Experience({
         <div className="mt-12 flex justify-center flex-wrap gap-4">
           <Link
             href="#projects"
-            className="inline-flex items-center gap-2 rounded-full bg-emerald-700 px-7 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-emerald-800"
+            className="inline-flex items-center gap-2 rounded-full bg-gray-900 px-7 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-gray-800"
           >
             <FileSpreadsheet size={18} />
             View Case Studies
@@ -151,7 +158,7 @@ export default function Experience({
           <Link
             href="https://wa.me/923336630418"
             target="_blank"
-            className="inline-flex items-center gap-2 rounded-full border border-emerald-700 px-7 py-3 text-sm font-semibold text-emerald-800 transition hover:bg-emerald-50"
+            className="inline-flex items-center gap-2 rounded-full border border-gray-300 px-7 py-3 text-sm font-semibold text-gray-800 transition hover:bg-gray-100"
           >
             <TrendingUp size={18} />
             Discuss Your Project

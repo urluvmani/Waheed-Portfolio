@@ -1,6 +1,6 @@
 // components/sections/About.tsx
 // SEO-safe, Server Component friendly
-// Premium About section for Excel Expert
+// Trusted About section – Clean Corporate Theme
 
 import { FileSpreadsheet, Settings, BarChart3, Award } from "lucide-react";
 import Link from "next/link";
@@ -35,12 +35,12 @@ export default function About({
     >
       <div className="mx-auto max-w-7xl px-5 py-20 lg:py-28">
 
-        {/* TOP GRID */}
+        {/* GRID */}
         <div className="grid gap-14 lg:grid-cols-2">
 
           {/* LEFT CONTENT */}
-          <div className=" p-2 md:p-10">
-            <h2 className="text-2xl font-extrabold text-emerald-900 sm:text-3xl">
+          <div className="p-2 md:p-10">
+            <h2 className="text-2xl font-extrabold text-gray-900 sm:text-3xl">
               {heading}
             </h2>
 
@@ -56,17 +56,18 @@ export default function About({
             </div>
 
             {/* STATS */}
-            <div className="mt-10 grid grid-cols-2 gap-6 sm:max-w-md">
-              <div className="rounded-2xl bg-emerald-50 p-5 text-center">
-                <p className="text-3xl font-extrabold text-emerald-800">
+            <div className="mt-12 grid grid-cols-2 gap-6 sm:max-w-md">
+              <div className="rounded-2xl border border-gray-200 bg-gray-50 p-5 text-center">
+                <p className="text-3xl font-extrabold text-gray-900">
                   30+
                 </p>
                 <p className="mt-1 text-sm text-gray-600">
                   Years Experience
                 </p>
               </div>
-              <div className="rounded-2xl bg-emerald-50 p-5 text-center">
-                <p className="text-3xl font-extrabold text-emerald-800">
+
+              <div className="rounded-2xl border border-gray-200 bg-gray-50 p-5 text-center">
+                <p className="text-3xl font-extrabold text-gray-900">
                   1000+
                 </p>
                 <p className="mt-1 text-sm text-gray-600">
@@ -76,10 +77,10 @@ export default function About({
             </div>
 
             {/* CTA */}
-            <div className="mt-10 flex flex-wrap gap-4">
+            <div className="mt-12 flex flex-wrap gap-4">
               <Link
                 href="#projects"
-                className="inline-flex items-center gap-2 rounded-full bg-emerald-700 px-7 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-emerald-800"
+                className="inline-flex items-center gap-2 rounded-full bg-gray-900 px-7 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-gray-800"
               >
                 <FileSpreadsheet size={18} />
                 View Projects
@@ -88,7 +89,7 @@ export default function About({
               <Link
                 href="https://wa.me/923336630418"
                 target="_blank"
-                className="inline-flex items-center gap-2 rounded-full border border-emerald-700 px-7 py-3 text-sm font-semibold text-emerald-800 transition hover:bg-emerald-50"
+                className="inline-flex items-center gap-2 rounded-full border border-gray-300 px-7 py-3 text-sm font-semibold text-gray-800 transition hover:bg-gray-100"
               >
                 <Award size={18} />
                 Work With Me
@@ -97,35 +98,35 @@ export default function About({
           </div>
 
           {/* RIGHT – SKILLS PANEL */}
-          <div className="relative h-70 md:h-60 rounded-3xl bg-emerald-50 p-8 mt-0 md:mt-22 shadow-sm">
-            <h3 className="text-sm font-semibold uppercase tracking-wide text-emerald-800">
+          <div className="relative rounded-3xl border border-gray-200 bg-gray-50 p-8 shadow-sm">
+            <h3 className="text-sm font-semibold uppercase tracking-widest text-gray-700">
               Core Tools & Expertise
             </h3>
 
-            <ul className="mt-8 grid gap-5 sm:grid-cols-2">
+            <ul className="mt-10 grid gap-6 sm:grid-cols-2">
               <li className="flex items-start gap-4">
-                <FileSpreadsheet className="mt-1 h-5 w-5 text-emerald-700" />
+                <FileSpreadsheet className="mt-1 h-5 w-5 text-gray-900" />
                 <span className="text-sm sm:text-base text-gray-800">
                   Advanced Excel Formulas & Models
                 </span>
               </li>
 
               <li className="flex items-start gap-4">
-                <Settings className="mt-1 h-5 w-5 text-emerald-700" />
+                <Settings className="mt-1 h-5 w-5 text-gray-900" />
                 <span className="text-sm sm:text-base text-gray-800">
                   Excel VBA Automation
                 </span>
               </li>
 
               <li className="flex items-start gap-4">
-                <BarChart3 className="mt-1 h-5 w-5 text-emerald-700" />
+                <BarChart3 className="mt-1 h-5 w-5 text-gray-900" />
                 <span className="text-sm sm:text-base text-gray-800">
                   Dashboards & KPI Reporting
                 </span>
               </li>
 
               <li className="flex items-start gap-4">
-                <Settings className="mt-1 h-5 w-5 text-emerald-700" />
+                <Settings className="mt-1 h-5 w-5 text-gray-900" />
                 <span className="text-sm sm:text-base text-gray-800">
                   Power Query & Data Cleaning
                 </span>

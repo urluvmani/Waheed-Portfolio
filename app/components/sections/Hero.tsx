@@ -36,30 +36,33 @@ export default function Hero({
     <section
       id={id}
       aria-label="Excel Expert Hero Section"
-      className="relative overflow-hidden bg-gradient-to-br from-emerald-100 via-white to-emerald-50"
+      className="relative overflow-hidden bg-gradient-to-br from-black via-neutral-900 to-neutral-800"
     >
-      <div className="mx-auto max-w-7xl px-5 py-12 sm:py-20 lg:py-28">
-        <div className="grid items-center gap-10 lg:grid-cols-2">
+      {/* subtle grid / noise feel */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_60%)]" />
+
+      <div className="relative mx-auto max-w-7xl px-5 py-14 sm:py-20 lg:py-28">
+        <div className="grid items-center gap-12 lg:grid-cols-2">
 
           {/* LEFT CONTENT */}
           <div className="text-center lg:text-left">
-            <p className="text-sm font-semibold tracking-wide text-emerald-700">
+            <p className="text-sm block md:hidden pt-10 md:pt-0 font-semibold tracking-widest text-gray-400 uppercase">
               {name}
             </p>
 
-            <h1 className="mt-4 text-3xl font-extrabold leading-tight text-emerald-900 sm:text-4xl lg:text-5xl">
+            <h1 className="mt-4 md:mt-0 text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl">
               {headlineH1}
             </h1>
 
-            <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-gray-700 sm:text-lg lg:mx-0">
+            <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-gray-300 sm:text-lg lg:mx-0">
               {subheadlineH2}
             </p>
 
             {/* BULLETS */}
-            <ul className="mx-auto mt-6 max-w-md space-y-3 text-left lg:mx-0">
+            <ul className="mx-auto mt-7 max-w-md space-y-4 text-left lg:mx-0">
               {bullets.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-gray-800">
-                  <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-xs font-bold text-white">
+                <li key={item} className="flex items-start gap-3 text-gray-200">
+                  <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white text-xs font-bold text-black">
                     ✓
                   </span>
                   <span>{item}</span>
@@ -68,21 +71,19 @@ export default function Hero({
             </ul>
 
             {/* CTA BUTTONS */}
-            <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
-              {/* View Case Studies */}
+            <div className="mt-10 md:mt-5 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
               <Link
                 href={ctaHref}
-                className="inline-flex items-center gap-2 rounded-full bg-emerald-700 px-7 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-emerald-800"
+                className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-semibold text-black shadow-lg transition hover:bg-gray-200"
               >
                 <FileSpreadsheet size={18} />
                 {ctaText}
               </Link>
 
-              {/* Contact on WhatsApp */}
               <Link
                 href="https://wa.me/923336630418"
                 target="_blank"
-                className="inline-flex items-center gap-2 rounded-full border border-emerald-700 px-7 py-3 text-sm font-semibold text-emerald-800 transition hover:bg-emerald-50"
+                className="inline-flex items-center gap-2 rounded-full border border-gray-500 px-7 py-3 text-sm font-semibold text-gray-200 transition hover:bg-white/10"
               >
                 <MessageCircle size={18} />
                 Contact on WhatsApp
@@ -90,16 +91,16 @@ export default function Hero({
             </div>
           </div>
 
-          {/* RIGHT IMAGE – MOBILE OPTIMIZED */}
-          <div className="relative mx-auto w-full max-w-[220px] sm:max-w-sm md:max-w-md">
-            <div className="relative rounded-2xl bg-emerald-700/10 p-1.5 shadow-lg sm:rounded-3xl sm:p-2">
+          {/* RIGHT IMAGE */}
+          <div className="relative mx-auto w-full max-w-[230px] sm:max-w-sm md:max-w-md">
+            <div className="relative rounded-3xl  shadow-2xl">
               <Image
                 src="/images/profile2.jpg"
                 alt={profileImageAlt}
                 width={420}
                 height={520}
                 priority
-                className="rounded-xl object-cover sm:rounded-2xl"
+                className="rounded-2xl object-cover"
               />
             </div>
           </div>
